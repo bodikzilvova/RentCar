@@ -121,4 +121,10 @@ export const BtnSearch = styled.button`
   font-size: 14px;
   line-height: 1.42;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus{
+    background-color: #0B44CD;
+  }
 `;
