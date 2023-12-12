@@ -19,10 +19,10 @@ function Header() {
         <NavLink to="/">
           <HeaderText>Home</HeaderText>
         </NavLink>
-        <NavLink to="rent">
+        <NavLink to="catalog">
           <HeaderText>Rent</HeaderText>
         </NavLink>
-        <NavLink to="favorite">
+        <NavLink to="favorites">
           <HeaderText>Favorite</HeaderText>
         </NavLink>
       </HeaderNav>

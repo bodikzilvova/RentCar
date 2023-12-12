@@ -6,7 +6,7 @@ function Main() {
   return (
     <MainContainer>
       <MainTitle>Enjoy Your best journey <br/> to best price</MainTitle>
-      <NavLink to="rent">
+      <NavLink to="catalog">
         <MainBtn>Rent now</MainBtn>
       </NavLink>
     </MainContainer>
