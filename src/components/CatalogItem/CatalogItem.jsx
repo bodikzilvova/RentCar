@@ -9,6 +9,7 @@ import {
   CarYear,
   CarPrice,
   TextWrapper,
+  SpanLine,
   ButtonMore,
 } from './CatalogItem.styled';
 
@@ -24,13 +25,21 @@ function CatalogItem() {
       </WrapperInfo>
 
       <TextWrapper>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
+        Lviv
+<SpanLine />
+Ukraine
+<SpanLine />
+Auto Rentals
+<SpanLine />
+Premium
+<SpanLine />
+Suv
+<SpanLine />
+Volvo
+<SpanLine />
+9584
+<SpanLine />
+Premium Sound System
       </TextWrapper>
 
       <ButtonMore>Learn More</ButtonMore>

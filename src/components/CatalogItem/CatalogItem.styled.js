@@ -40,6 +40,35 @@ export const CarPrice = styled.p`
 margin-left: auto;
 `
 export const TextWrapper = styled.div`
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+width: 274px;
+margin-bottom: 28px;
+font-family: Manrope, sans-serif;
+font-weight: 400;
+font-size: 12px;
+line-height: 1.5;
+color: rgba(18, 20, 23, 0.5);
+`
+
+export const SpanLine = styled.span`
+margin-left: 6px;
+margin-right: 6px;
+border-left: 1px solid rgba(18, 20, 23, 0.2);
+
 `
 export const ButtonMore = styled.button`
+width: 274px;
+height: 44px;
+background-color: #3470FF;
+border-radius: 12px;
+border: none;
+cursor: pointer;
+font-family: Manrope, sans-serif;
+font-weight: 600;
+font-size: 14px;
+line-height: 1.4;
+color: #fff;
+padding: 12px 99px 12px 99px;
 `
