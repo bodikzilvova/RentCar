@@ -13,7 +13,8 @@ import {
   ButtonMore,
 } from './CatalogItem.styled';
 
-function CatalogItem() {
+function CatalogItem({ imgUrl, name, model, price, adress, company, type, mileage, accessories}) {
+
   return (
     <Wrapper>
       <HeartIcon></HeartIcon>

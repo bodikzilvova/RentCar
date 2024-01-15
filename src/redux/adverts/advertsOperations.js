@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchAdverts = createAsyncThunk(
   'adverts/fetchAdverts',
-  async (page, thunkAPI) => {
+  async (page=1, thunkAPI) => {
     const queryInstance = axios.create({
       baseURL: 'https://64ee06641f8721827142313f.mockapi.io/api/phonebook/',
       params: {
