@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import {
   Wrapper,
   HeartIcon,
@@ -13,34 +13,32 @@ import {
   ButtonMore,
 } from './CatalogItem.styled';
 
-function CatalogItem({ imgUrl, name, model, price, adress, company, type, mileage, accessories}) {
+function CatalogItem({ imgUrl, name, model, price, year, city, country, company, type, mileage, accessories}) {
 
   return (
     <Wrapper>
       <HeartIcon></HeartIcon>
-      <Image></Image>
+      <Image src={imgUrl} loading="lazy"/>
       <WrapperInfo>
-        <CarName>Buick</CarName>
-        <CarModel>Enclave</CarModel>,<CarYear>2008</CarYear>
-        <CarPrice>$40</CarPrice>
+        <CarName>{name}</CarName>
+        <CarModel>{model}</CarModel>,<CarYear>{year}</CarYear>
+        <CarPrice>{price}</CarPrice>
       </WrapperInfo>
 
       <TextWrapper>
-        Lviv
+        {city}
 <SpanLine />
-Ukraine
+{country}
 <SpanLine />
-Auto Rentals
+{company}
 <SpanLine />
-Premium
+{type}
 <SpanLine />
-Suv
+{model}
 <SpanLine />
-Volvo
+{mileage}
 <SpanLine />
-9584
-<SpanLine />
-Premium Sound System
+{accessories}
       </TextWrapper>
 
       <ButtonMore>Learn More</ButtonMore>

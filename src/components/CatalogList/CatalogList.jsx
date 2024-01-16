@@ -14,8 +14,10 @@ function CatalogList() {
         imgUrl={advert.img}
         name={advert.make}
         model={advert.model}
+        year={advert.year}
         price={advert.rentalPrice}
-        adress={advert.adress}
+        city={advert.city}
+        country={advert.country}
         company={advert.rentalCompany}
         type={advert.type}
         mileage={advert.mileage}
