@@ -1,13 +1,13 @@
 import CatalogItem from 'components/CatalogItem/CatalogItem';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { List } from './CatalogList.styled';
 
 function CatalogList() {
   const adverts = useSelector(state => state.adverts.items);
-  console.log(adverts);
 
   return (
-    <ul>
+    <List>
       {adverts.map(advert => (
         <CatalogItem 
         key={advert.id}
@@ -24,7 +24,7 @@ function CatalogList() {
         accessories={advert.accessories[0]}
         />
       ))}
-    </ul>
+    </List>
   );
 }
 
