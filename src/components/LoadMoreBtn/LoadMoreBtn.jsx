@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from './LoadMoreBtn.styled';
 
-function LoadMoreBtn() {
+function LoadMoreBtn({handleLoadMore}) {
+
   return (
       <>
-      <Button>Load More</Button>
+      <Button onClick={handleLoadMore}>Load More</Button>
     </>
    
   );

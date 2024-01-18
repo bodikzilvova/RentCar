@@ -1,25 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from './RentPage.styled';
 import SearchForms from 'components/SearchForms/SearchForms';
 import CatalogList from 'components/CatalogList/CatalogList';
 import { fetchAdverts } from '../../redux/adverts/advertsOperations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 
 function RentPage() {
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  const hasMore = useSelector((state) => state.adverts.hasMore);
 
   useEffect(() => {
-    dispatch(fetchAdverts());
-  });
+    dispatch(fetchAdverts(page));
+  }, [dispatch, page]);
+
+  const handleLoadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
+
   return (
     <>
       <Container>
         <SearchForms />
         <CatalogList />
-        <LoadMoreBtn />
+        {hasMore && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
       </Container>
-    
     </>
   );
 }

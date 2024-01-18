@@ -1,4 +1,4 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import {
   Wrapper,
   HeartIcon,
@@ -18,7 +18,7 @@ function CatalogItem({ imgUrl, name, model, price, year, city, country, company,
   return (
     <Wrapper>
       <HeartIcon></HeartIcon>
-      <Image src={imgUrl} loading={lazy}/>
+      <Image src={imgUrl}/>
       <WrapperInfo>
         <CarName>{name}</CarName>
         <CarModel>{model}</CarModel>,<CarYear>{year}</CarYear>
