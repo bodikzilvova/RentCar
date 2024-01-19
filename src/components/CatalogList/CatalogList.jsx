@@ -6,8 +6,6 @@ import { List } from './CatalogList.styled';
 function CatalogList() {
   const adverts = useSelector(state => state.adverts.items);
 
-  
-
   return (
     <List>
       {adverts.map(advert => (

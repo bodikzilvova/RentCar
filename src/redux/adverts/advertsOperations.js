@@ -14,6 +14,7 @@ export const fetchAdverts = createAsyncThunk(
 
 try {
   const response = await queryInstance.get('/advert', { params: { page, limit: 12 } });
+  console.log(response.data)
     return response.data;
   } catch (e) {
     console.log('Something went wrong try again');

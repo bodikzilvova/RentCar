@@ -11,7 +11,6 @@ import { getHasMore } from '../../redux/adverts/advertsSlice';
 function RentPage() {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-
   const hasMore = useSelector(getHasMore);
 
 
