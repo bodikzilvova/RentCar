@@ -5,18 +5,23 @@ import CatalogList from 'components/CatalogList/CatalogList';
 import { fetchAdverts } from '../../redux/adverts/advertsOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
+import { getHasMore } from '../../redux/adverts/advertsSlice';
+
 
 function RentPage() {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const hasMore = useSelector((state) => state.adverts.hasMore);
+
+  const hasMore = useSelector(getHasMore);
+
 
   useEffect(() => {
     dispatch(fetchAdverts(page));
   }, [dispatch, page]);
 
+
   const handleLoadMore = () => {
-    setPage(prevPage => prevPage + 1);
+    setPage((prevPage) => prevPage + 1);
   };
 
   return (

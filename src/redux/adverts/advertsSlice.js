@@ -5,7 +5,7 @@ const advertsInitialState = {
   items: [],
   isLoading: false,
   error: null,
-  hasMore: true,
+  hasMore: true, 
 };
 
 const handlePending = state => {
@@ -27,14 +27,13 @@ const advertsSlice = createSlice({
       .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.error = null;
-        state.items =  [...state.items, ...payload];
-        // state.page += 1;
+        state.items = [...state.items, ...payload];
         state.hasMore = payload.length > 0;
       });
   },
 });
 
 export const getAdverts = state => state.adverts.items;
-export const getPage = (state) => state.adverts.page;
+export const getHasMore = state => state.adverts.hasMore;
 export const advertsReducer = advertsSlice.reducer;
 

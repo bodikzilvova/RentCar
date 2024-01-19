@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-
+import { advertsReducer } from './adverts/advertsSlice';
 import {
   persistStore,
   // persistReducer,
@@ -11,7 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
-import { advertsReducer } from './adverts/advertsSlice';
+
 
 
 
