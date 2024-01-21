@@ -2,11 +2,13 @@ import CatalogItem from 'components/CatalogItem/CatalogItem';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { List } from './CatalogList.styled';
+import ModalWindow from 'components/ModalWindow/ModalWindow';
 
 function CatalogList() {
   const adverts = useSelector(state => state.adverts.items);
 
   return (
+    <>
     <List>
       {adverts.map(advert => (
         <CatalogItem 
@@ -25,6 +27,8 @@ function CatalogList() {
         />
       ))}
     </List>
+    <ModalWindow></ModalWindow>
+   </>
   );
 }
 
