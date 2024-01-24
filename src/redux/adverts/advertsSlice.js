@@ -5,7 +5,7 @@ const advertsInitialState = {
   items: [],
   isLoading: false,
   error: null,
-  hasMore: true, 
+  hasMore: true,
 };
 
 const handlePending = state => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Wrapper,
   HeartIcon,
@@ -12,36 +12,50 @@ import {
   SpanLine,
   ButtonMore,
 } from './CatalogItem.styled';
+import ModalWindow from 'components/ModalWindow/ModalWindow';
 
-function CatalogItem({ imgUrl, name, model, price, year, city, country, company, type, mileage, accessories}) {
+function CatalogItem({ item }) {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleLearnMoreClick = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <Wrapper>
       <HeartIcon></HeartIcon>
-      <Image src={imgUrl}/>
+      <Image src={item.img} />
       <WrapperInfo>
-        <CarName>{name}</CarName>
-        <CarModel>{model}</CarModel>,<CarYear>{year}</CarYear>
-        <CarPrice>{price}</CarPrice>
+        <CarName>{item.make}</CarName>
+        <CarModel>{item.model}</CarModel>,<CarYear>{item.year}</CarYear>
+        <CarPrice>{item.rentalPrice}</CarPrice>
       </WrapperInfo>
 
       <TextWrapper>
-        {city}
-<SpanLine />
-{country}
-<SpanLine />
-{company}
-<SpanLine />
-{type}
-<SpanLine />
-{model}
-<SpanLine />
-{mileage}
-<SpanLine />
-{accessories}
+        {item.city}
+        <SpanLine />
+        {item.country}
+        <SpanLine />
+        {item.rentalCompany}
+        <SpanLine />
+        {item.type}
+        <SpanLine />
+        {item.model}
+        <SpanLine />
+        {item.mileage}
+        <SpanLine />
+        {item.accessories[0]}
       </TextWrapper>
 
-      <ButtonMore>Learn More</ButtonMore>
+      <ButtonMore onClick={handleLearnMoreClick}>Learn More</ButtonMore>
+
+      {isModalVisible && (
+        <ModalWindow item={item} closeModal={handleCloseModal} />
+      )}
     </Wrapper>
   );
 }
