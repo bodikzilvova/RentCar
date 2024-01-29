@@ -10,6 +10,7 @@ export const Backdrop = styled.div`
   width: 100%;
   height: 100vh;
   background: rgba(18, 20, 23, 0.5);
+  z-index: 1000;
 `;
 
 export const PositionWrapper = styled.div`

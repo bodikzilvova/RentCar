@@ -6,6 +6,7 @@ const advertsInitialState = {
   isLoading: false,
   error: null,
   hasMore: true,
+  favorites: [],
 };
 
 const handlePending = state => {
@@ -31,9 +32,22 @@ const advertsSlice = createSlice({
         state.hasMore = payload.length > 0;
       });
   },
+  reducers: {
+    addToFavorites: (state, action) => {
+      state.favorites.push(action.payload);
+    },
+    removeFromFavorites: (state, action) => {
+      state.favorites = state.favorites.filter(
+        ad => ad.id !== action.payload.id
+      );
+    },
+  },
 });
+
+export const { addToFavorites, removeFromFavorites } = advertsSlice.actions;
 
 export const getAdverts = state => state.adverts.items;
 export const getHasMore = state => state.adverts.hasMore;
-export const advertsReducer = advertsSlice.reducer;
+export const getFavorites = state => state.adverts.favorites;
 
+export const advertsReducer = advertsSlice.reducer;

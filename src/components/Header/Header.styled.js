@@ -9,6 +9,7 @@ export const HeaderContainer = styled.header`
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: -1px;
+  z-index: 500;
 `;
 
 export const Headerlogo = styled.img`

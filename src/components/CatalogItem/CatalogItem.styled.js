@@ -17,6 +17,14 @@ export const HeartIcon = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  svg {
+    fill: ${props => (props.$active ? '#3470FF' : 'transparent')};
+  }
+
+  path {
+    stroke: ${props => (props.$active ? '#3470FF' : 'rgba(255, 255, 255, 0.8)')};
+  }
 `;
 
 export const Image = styled.img`
