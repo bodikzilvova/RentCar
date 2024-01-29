@@ -2,11 +2,21 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.li`
   max-width: 274px;
+  position: relative;
 `;
 
-export const HeartIcon = styled.svg`
+export const HeartIcon = styled.button`
+  position: absolute;
+  top: 14px;
+  left: 242px;
   width: 24px;
   height: 24px;
+  background-color: inherit;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `;
 
 export const Image = styled.img`
