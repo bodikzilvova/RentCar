@@ -12,9 +12,6 @@ import {
 } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 
-
-
-
 export const store = configureStore({
   reducer: {
    adverts: advertsReducer,

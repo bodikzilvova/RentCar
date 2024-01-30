@@ -7,8 +7,6 @@ import { getFilteredAdverts } from '../../redux/adverts/advertsSlice';
 function CatalogList() {
   const filteredAdverts = useSelector(getFilteredAdverts);
 
-  console.log(filteredAdverts);
-
   if (!filteredAdverts || filteredAdverts.length === 0) {
     return <>No results found</>;
   }

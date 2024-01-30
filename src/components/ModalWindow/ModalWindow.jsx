@@ -77,8 +77,6 @@ function ModalWindow({ item, closeModal }) {
             {item.engineSize}
           </TextWrapper>
 
-          {/* <Description>{item.description}</Description> */}
-
           <Functionalities>
             <Accessories>Accessories and functionalities:</Accessories>
 
