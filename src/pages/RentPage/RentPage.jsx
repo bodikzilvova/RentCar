@@ -4,23 +4,23 @@ import SearchForms from 'components/SearchForms/SearchForms';
 import CatalogList from 'components/CatalogList/CatalogList';
 import { fetchAdverts } from '../../redux/adverts/advertsOperations';
 import { useDispatch, useSelector } from 'react-redux';
+import { getAdverts, getHasMore } from '../../redux/adverts/advertsSlice';
 import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
-import { getHasMore } from '../../redux/adverts/advertsSlice';
-
 
 function RentPage() {
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
+  const adverts = useSelector(getAdverts);
   const hasMore = useSelector(getHasMore);
-
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
+    if (adverts.length === 0)
     dispatch(fetchAdverts(page));
-  }, [dispatch, page]);
-
+  }, [dispatch, page, adverts]);
 
   const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
+    setPage(prev => prev + 1);
+    dispatch(fetchAdverts(page + 1));
   };
 
   return (
@@ -28,7 +28,7 @@ function RentPage() {
       <Container>
         <SearchForms />
         <CatalogList />
-        {hasMore && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
+        {hasMore &&  <LoadMoreBtn handleLoadMore={handleLoadMore}/>}
       </Container>
     </>
   );

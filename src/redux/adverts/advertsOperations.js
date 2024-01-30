@@ -13,7 +13,7 @@ export const fetchAdverts = createAsyncThunk(
     });
 
 try {
-  const response = await queryInstance.get('/advert', { params: { page, limit: 12 } });
+  const response = await queryInstance.get('/advert');
   console.log(response.data)
     return response.data;
   } catch (e) {

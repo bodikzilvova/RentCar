@@ -7,6 +7,7 @@ const advertsInitialState = {
   error: null,
   hasMore: true,
   favorites: [],
+  currentPage: 1,
 };
 
 const handlePending = state => {
@@ -25,14 +26,18 @@ const advertsSlice = createSlice({
     builder
       .addCase(fetchAdverts.pending, handlePending)
       .addCase(fetchAdverts.rejected, handleRejected)
-      .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
+      .addCase(fetchAdverts.fulfilled, (state, { payload, meta }) => {
         state.isLoading = false;
         state.error = null;
         state.items = [...state.items, ...payload];
         state.hasMore = payload.length > 0;
+        state.currentPage = meta.arg.page;
       });
   },
   reducers: {
+    setAdverts: (state, action) => {
+      state.items = action.payload;
+    },
     addToFavorites: (state, action) => {
       state.favorites.push(action.payload);
     },
@@ -44,10 +49,15 @@ const advertsSlice = createSlice({
   },
 });
 
+export const { setAdverts } = advertsSlice.actions;
+
 export const { addToFavorites, removeFromFavorites } = advertsSlice.actions;
 
 export const getAdverts = state => state.adverts.items;
 export const getHasMore = state => state.adverts.hasMore;
 export const getFavorites = state => state.adverts.favorites;
+
+export const getCurrentPage = state => state.adverts.currentPage;
+
 
 export const advertsReducer = advertsSlice.reducer;
