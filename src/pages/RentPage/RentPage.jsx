@@ -10,12 +10,12 @@ import LoadMoreBtn from 'components/LoadMoreBtn/LoadMoreBtn';
 function RentPage() {
   const dispatch = useDispatch();
   const adverts = useSelector(getAdverts);
+
   const hasMore = useSelector(getHasMore);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    if (adverts.length === 0)
-    dispatch(fetchAdverts(page));
+    if (adverts.length === 0) dispatch(fetchAdverts(page));
   }, [dispatch, page, adverts]);
 
   const handleLoadMore = () => {
@@ -23,12 +23,16 @@ function RentPage() {
     dispatch(fetchAdverts(page + 1));
   };
 
+  const handleSearch = selectedBrand => {
+    console.log('Selected Brand:', selectedBrand);
+  };
+
   return (
     <>
       <Container>
-        <SearchForms />
+        <SearchForms onSearch={handleSearch} />
         <CatalogList />
-        {hasMore &&  <LoadMoreBtn handleLoadMore={handleLoadMore}/>}
+        {hasMore && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
       </Container>
     </>
   );

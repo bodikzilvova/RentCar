@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-margin-bottom: 50px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: row;
 `;
@@ -27,12 +27,12 @@ export const Label = styled.label`
   margin-bottom: 8px;
 `;
 
-export const SelectBrand = styled.input`
+export const SelectBrand = styled.select`
   width: 224px;
   height: 48px;
   border: none;
   border-radius: 14px;
-  padding: 14px 89px 14px 18px;
+  padding: 14px 18px;
   background: #f7f7fb;
   margin-right: 18px;
   font-family: Manrope, sans-serif;
@@ -47,59 +47,6 @@ export const SelectBrand = styled.input`
     font-size: 18px;
     line-height: 1.11;
   }
-  &:hover,
-  &:focus,
-  &:active {
-    outline: none;
-  }
-`;
-
-export const SelectPrice = styled.input`
-  width: 125px;
-  height: 48px;
-  border: none;
-  border-radius: 14px;
-  padding: 14px, 18px, 14px, 18px;
-  background: #f7f7fb;
-  margin-right: 18px;
-  font-family: Manrope, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.11;
-  color: #121417;
-
-  &:hover,
-  &:focus,
-  &:active {
-    outline: none;
-  }
-`;
-
-export const WrapperMeter = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const InputMeterFrom = styled.input`
-  width: 160px;
-  height: 48px;
-  border: none;
-  border-radius: 14px 0 0 14px;
-  border-right: 1px solid rgba(138, 138, 137, 0.2);
-  background: #f7f7fb;
-  &:hover,
-  &:focus,
-  &:active {
-    outline: none;
-  }
-`;
-
-export const InputMeterTo = styled.input`
-  width: 160px;
-  height: 48px;
-  border: none;
-  border-radius: 0 14px 14px 0;
-  background: #f7f7fb;
   &:hover,
   &:focus,
   &:active {
@@ -124,7 +71,7 @@ export const BtnSearch = styled.button`
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
-  &:focus{
-    background-color: #0B44CD;
+  &:focus {
+    background-color: #0b44cd;
   }
 `;

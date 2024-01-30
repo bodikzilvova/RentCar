@@ -2,14 +2,21 @@ import CatalogItem from 'components/CatalogItem/CatalogItem';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { List } from './CatalogList.styled';
+import { getFilteredAdverts } from '../../redux/adverts/advertsSlice';
 
 function CatalogList() {
-  const adverts = useSelector(state => state.adverts.items);
+  const filteredAdverts = useSelector(getFilteredAdverts);
+
+  console.log(filteredAdverts);
+
+  if (!filteredAdverts || filteredAdverts.length === 0) {
+    return <>No results found</>;
+  }
 
   return (
     <>
       <List>
-        {adverts.map(advert => (
+        {filteredAdverts.map(advert => (
           <CatalogItem key={advert.id} item={advert} />
         ))}
       </List>

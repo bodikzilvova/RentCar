@@ -3,6 +3,8 @@ import { fetchAdverts } from './advertsOperations';
 
 const advertsInitialState = {
   items: [],
+  filteredAdverts: [],
+  brandFilter: '',
   isLoading: false,
   error: null,
   hasMore: true,
@@ -46,6 +48,13 @@ const advertsSlice = createSlice({
         ad => ad.id !== action.payload.id
       );
     },
+    setBrandFilter: (state, action) => {
+      state.brandFilter = action.payload;
+
+      state.filteredAdverts = state.items.filter(
+        advert => advert.make === action.payload
+      );
+    },
   },
 });
 
@@ -53,11 +62,21 @@ export const { setAdverts } = advertsSlice.actions;
 
 export const { addToFavorites, removeFromFavorites } = advertsSlice.actions;
 
+export const getFilteredAdverts = state => {
+  const brandFilter = state.adverts.brandFilter;
+  const allAdverts = state.adverts.items;
+
+  return brandFilter
+    ? allAdverts.filter(advert => advert.make === brandFilter)
+    : allAdverts;
+};
+
 export const getAdverts = state => state.adverts.items;
 export const getHasMore = state => state.adverts.hasMore;
 export const getFavorites = state => state.adverts.favorites;
 
 export const getCurrentPage = state => state.adverts.currentPage;
 
+export const { setBrandFilter } = advertsSlice.actions;
 
 export const advertsReducer = advertsSlice.reducer;
