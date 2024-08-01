@@ -13,6 +13,11 @@ export const Title = styled.h1`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
+
+  @media(max-width: 375.98px){
+  font-size: 48px;
+  line-height: 1.24;
+  }
 `;
 
 export const FavoriteList = styled.ul`

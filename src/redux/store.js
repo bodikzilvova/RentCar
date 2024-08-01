@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import { advertsReducer } from './adverts/advertsSlice';
 import {
   persistStore,
-  // persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,7 +9,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
 
 export const store = configureStore({
   reducer: {

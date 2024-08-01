@@ -17,15 +17,23 @@ export const PositionWrapper = styled.div`
   position: relative;
   border-radius: 24px;
   background-color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 export const Wrapper = styled.div`
   width: 541px;
-  height: 100%;
+  height: 95vh;
   padding: 40px;
-
   display: flex;
   flex-direction: column;
+     overflow-y: auto;
+
+  @media (max-width: 768.98px) {
+    width: 100%;
+    padding: 20px;
+     height: 90vh;
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -41,6 +49,12 @@ display: flex;
 align-items: center;
 justify-content: center;
 outline: none;
+
+ @media (max-width: 768.98px) {
+    left: auto;
+    right: 20px;
+    top: 0px;
+  }
 
 svg {
     stroke: transparent;
@@ -61,6 +75,11 @@ export const Img = styled.img`
   height: 248px;
   border-radius: 14px;
   margin-bottom: 14px;
+
+  @media (max-width: 768.98px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const WrapperInfo = styled.div`
@@ -75,6 +94,10 @@ export const WrapperInfo = styled.div`
 
 export const CarName = styled.p`
   margin-right: 4px;
+
+  @media (max-width: 768.98px) {
+    margin-right: 0;
+  }
 `;
 
 export const CarModel = styled.span`
@@ -83,6 +106,10 @@ export const CarModel = styled.span`
 
 export const CarYear = styled.p`
   margin-left: 4px;
+
+  @media (max-width: 768.98px) {
+    margin-left: 0;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -101,6 +128,10 @@ export const SpanLine = styled.span`
   margin-left: 6px;
   margin-right: 6px;
   border-left: 1px solid rgba(18, 20, 23, 0.2);
+
+  @media (max-width: 768.98px) {
+    margin: 0 3px;
+  }
 `;
 
 export const Description = styled.p`
@@ -137,6 +168,11 @@ export const FlexWrapper = styled.div`
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
+
+   @media (max-width: 768.98px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ConditionWrapper = styled.div`
@@ -145,6 +181,11 @@ export const ConditionWrapper = styled.div`
   border-radius: 32px;
   padding: 7px 14px;
   margin-bottom: 8px;
+
+   @media (max-width: 768.98px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 export const ColorText = styled.span`
@@ -168,4 +209,8 @@ export const RentBtn = styled.button`
   font-size: 14px;
   line-height: 1.42;
   color: #ffffff;
+
+  @media (max-width: 768.98px) {
+    width: 100%;
+  }
 `;

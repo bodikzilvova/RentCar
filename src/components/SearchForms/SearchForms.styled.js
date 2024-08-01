@@ -52,6 +52,13 @@ export const SelectBrand = styled.select`
   &:active {
     outline: none;
   }
+
+  @media(max-width: 375.98px){
+   width: 200px;
+  height: 40px;
+   padding: 10px 10px;
+  }
+
 `;
 
 export const BtnSearch = styled.button`
@@ -73,5 +80,10 @@ export const BtnSearch = styled.button`
   &:hover,
   &:focus {
     background-color: #0b44cd;
+  }
+
+   @media(max-width: 375.98px){
+   width: 130px;
+  height: 40px;
   }
 `;
