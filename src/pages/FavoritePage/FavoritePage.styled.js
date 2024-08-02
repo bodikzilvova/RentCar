@@ -14,24 +14,23 @@ export const Title = styled.h1`
   text-transform: uppercase;
   margin-bottom: 20px;
 
-  @media(max-width: 375.98px){
-  font-size: 48px;
-  line-height: 1.24;
+  @media (max-width: 375.98px) {
+    font-size: 48px;
+    line-height: 1.24;
   }
 `;
 
 export const FavoriteList = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 40px;
 `;
 
 export const NoFavorites = styled.p`
-font-family: sans-serif;
+  font-family: sans-serif;
   font-weight: 500;
   font-size: 36px;
   line-height: 1.36;
   text-align: center;
-  
-`
+`;
